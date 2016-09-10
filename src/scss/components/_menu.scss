@@ -1,0 +1,39 @@
+.patchr-patch-menu {
+  margin: 0;
+  &, li, a {
+    display: inline-block;
+    float: left;
+  }
+  li:first-child {
+    padding: 5px 15px 5px 0;
+  }
+  li:nth-child(2) a {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+  li:last-child a {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+  a {
+    background: #fff;
+    border: 1px solid $border-color;
+    color: $gray;
+    margin-left: -1px;
+    padding: 5px 10px;
+    text-decoration: none;
+    @include hover-focus-active() {
+      background: $gray-lightest;
+      color: $blue;
+      text-decoration: none;
+    }
+    &.active {
+      background: $blue;
+      border-color: $blue;
+      color: #fff;
+      position: relative;
+      text-decoration: none;
+      @include hover-focus-active() {
+        text-decoration: none;
+      }
+    }
+  }
+}

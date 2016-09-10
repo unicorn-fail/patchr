@@ -1,0 +1,115 @@
+// Reset elements.
+.patchr-reset {
+  box-sizing: border-box;
+  color: #333;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+  aside, footer, header, main, menu, nav, section, summary {
+    display: block;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: $margin-base;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: $margin-base;
+  }
+
+  ol, ul {
+    margin-top: 0;
+    margin-bottom: $margin-base;
+  }
+
+  ol ol, ul ul, ol ul, ul ol {
+    margin-bottom: 0;
+  }
+
+  a {
+    background-color: transparent;
+    color: $link-color;
+    text-decoration: $link-decoration;
+
+    @include hover-focus {
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
+    &:active,
+    &:hover {
+      outline-width: 0;
+    }
+    &:focus {
+      @include tab-focus();
+    }
+  }
+  a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+    @include hover-focus {
+      color: inherit;
+      text-decoration: none;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  small {
+    font-size: 80%;
+  }
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  pre {
+    margin-top: 0;
+    margin-bottom: $margin-base;
+    overflow: auto;
+  }
+
+  img {
+    border-style: none;
+    vertical-align: middle;
+  }
+
+  a, area, button, [role="button"], input, label, select, summary, textarea {
+    touch-action: manipulation;
+  }
+
+  table {
+    border: 0;
+    border-collapse: collapse;
+    background-color: transparent;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+}

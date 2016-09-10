@@ -1,0 +1,39 @@
+.patchr-patch {
+  clear: both;
+}
+
+.patchr-patch-meta {
+  background: $gray-lightest;
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  display: inline-block;
+  padding: 5px 15px;
+  position: relative;
+  width: 100%;
+  table, tbody, tr, td {
+    border: 0;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+  }
+  td {
+    padding: 3px 10px;
+    vertical-align: middle;
+    &:first-child {
+      background: $gray-light;
+      font-weight: 700;
+      min-width: 50px;
+      user-select: none;
+    }
+  }
+  table {
+    border-collapse: collapse;
+    margin: -5px -15px;
+  }
+  tr:first-child td {
+    padding-top: 8px;
+  }
+  tr:last-child td {
+    padding-bottom: 8px;
+  }
+}

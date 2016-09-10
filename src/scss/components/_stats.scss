@@ -1,0 +1,19 @@
+// Stats.
+.patchr-stat {
+  border: 1px solid darken($border-color, 5%);
+  border-radius: $border-radius;
+  font-size: $font-size-small;
+  font-weight: 700;
+  overflow: hidden;
+}
+.patchr-stat-additions {
+  color: $added;
+  background: $additions;
+  border-right: 1px solid darken($border-color, 5%);
+  padding: 3px 6px;
+}
+.patchr-stat-deletions {
+  color: $deleted;
+  background: $deletions;
+  padding: 3px 6px;
+}

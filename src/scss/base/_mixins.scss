@@ -1,0 +1,39 @@
+@mixin clearfix() {
+  &:before, &:after {
+    content: ' ';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin hover {
+  &:hover { @content }
+}
+
+@mixin hover-focus {
+  &:focus { @content }
+  @include hover { @content }
+}
+
+@mixin plain-hover-focus {
+  &,
+  &:focus {
+    @content
+  }
+  @include hover { @content }
+}
+
+@mixin hover-focus-active {
+  &:focus,
+  &:active {
+    @content
+  }
+  @include hover { @content }
+}
+
+@mixin tab-focus() {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}

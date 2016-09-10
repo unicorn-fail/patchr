@@ -1,0 +1,130 @@
+.patchr-tab {
+  background: $deleted;
+  border-radius: $border-radius-small;
+  color: #fff;
+  display: inline-block;
+  line-height: 1;
+  margin: .1em;
+  text-align: center;
+  width: 1em;
+  &:before {
+    content: 'T';
+    display: inline;
+    font-size: 80%;
+  }
+}
+
+.patchr-trailing-space {
+  background: $deletions;
+  border: 1px solid $deleted;
+  border-radius: $border-radius-small;
+  color: #fff;
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+}
+
+// File table.
+.patchr-file-table-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.patchr-file-table {
+  border-collapse: collapse;
+  margin: 0;
+  min-width: 100%;
+  table-layout: fixed;
+  // Reset any existing styles.
+  &, tbody, tr, td {
+    border: 0;
+    font-family: $font-family-monospace;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+  }
+}
+.patchr-line {
+  td {
+    border-right: 1px solid $border-color;
+    line-height: 20px;
+    padding: 0 10px;
+    position: relative;
+    vertical-align: middle;
+    &:last-child {
+      border-right: 0;
+    }
+    &.patchr-line-number {
+      color: rgba(0,0,0,0.4);
+      cursor: pointer;
+      min-width: 60px;
+      text-align: right;
+      user-select: none;
+      width: 1%;
+      &:hover {
+        color: rgba(0,0,0,0.7);
+      }
+      &::before {
+        content: attr(data-line-number);
+      }
+    }
+    &.patchr-line-code {
+      vertical-align: top;
+    }
+    .patchr-line-code-inner {
+      &::before {
+        content: attr(data-symbol);
+      }
+      white-space: pre;
+      word-wrap: normal;
+    }
+  }
+  &.patchr-line--hunk {
+    td {
+      background: #f4f7fb;
+      border-color: #d2dff0;
+      color: rgba(0,0,0,0.4);
+      padding-bottom: 3px;
+      padding-top: 3px;
+      white-space: pre;
+      word-wrap: normal;
+      &.patchr-line-number {
+        cursor: default;
+        text-align: center;
+        &:hover {
+          color: rgba(0,0,0,0.4);
+        }
+      }
+      &.patchr-hunk-meta::before {
+        content: attr(data-hunk-meta);
+      }
+    }
+  }
+  &.patchr-line--added {
+    td {
+      background: $additions;
+    }
+    td.patchr-line-number {
+      background: darken($additions, 3%);
+      border-color: #c9e2c9;
+    }
+  }
+
+  &.patchr-line--deleted {
+    td {
+      background: $deletions;
+    }
+    td.patchr-line-number {
+      background: darken($deletions, 3%);
+      border-color: #e2cbcb;
+    }
+  }
+
+
+  &.patchr-line--no-new-line {
+    td {
+      background: $deleted;
+      color: #fff;
+    }
+
+  }
+}

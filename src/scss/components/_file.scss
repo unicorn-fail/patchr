@@ -1,0 +1,57 @@
+// File.
+.patchr-file {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  margin: 0 0 15px;
+}
+
+// File header.
+.patchr-file-header {
+  background: $gray-lightest;
+  border-bottom: 1px solid $border-color;
+  padding: 5px 15px;
+  .patchr-file-info {
+    line-height: 30px;
+  }
+  .patchr-stat {
+    float: right;
+    line-height: 20px;
+    margin: 5px 0;
+  }
+}
+
+.patchr-filename {
+  font-family: $font-family-monospace;
+}
+
+// File status.
+.patchr-file-status {
+  background: #aaa;
+  border-radius: $border-radius;
+  box-sizing: content-box;
+  color: #fff;
+  cursor: default;
+  display: inline-block;
+  font-family: $font-family-monospace;
+  font-size: $font-size-small;
+  height: 1em;
+  line-height: 1;
+  margin-right: 5px;
+  padding: 3px 3px 2px;
+  text-align: center;
+  user-select: none;
+  vertical-align: middle;
+  width: 1em;
+  &.patchr-file-status--added {
+    background: $added;
+  }
+  &.patchr-file-status--deleted {
+    background: $deleted;
+  }
+  &.patchr-file-status--modified {
+    background: $modified;
+  }
+  &.patchr-file-status--renamed {
+    background: $renamed;
+  }
+}
